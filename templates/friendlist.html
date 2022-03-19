@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friend List</title>
+</head>
+<body>
+    <h2>Your Friends</h2>
+   <div>
+    {% if users %}
+       {% for user in users %}
+         <div><p>{{user[0][0]}} {{user[0][1]}} {{user[0][2]}}</p></div>
+       {% endfor %}
+    {% endif %}
+   </div>
+<a href='/'>Home</a>
+</body>
+</html>

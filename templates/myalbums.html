@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>My Albums</h1>
+  <form action = "" method="post">
+      <h3>Create an album</h3>
+      <input type="text" name="name" placeholder="Album name"/>
+      <input type="submit"/>
+  </form>
+  {% if names %}
+    {% for name in names %}
+      <p>{{name[0]}} Created on {{name[1]}}</p><a href="/displayalbum?name={{name[0]}}">View</a>
+    {% endfor %}
+  {% endif %}
+
+<a href="/">Home</a>
+</body>
+</html>

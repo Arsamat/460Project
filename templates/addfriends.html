@@ -1,0 +1,26 @@
+<head>
+    <title>Find friends!</title>
+</head>
+    <body>
+        <div class="title">
+            <h1>Find your friends below</h1>
+        </div>
+        <div id="content">
+            <!-- need to change register user in action -->
+            <form method="post" enctype="multipart/form-data" action="">
+                <input type="text" name="name" class="search" placeholder="Search here!">
+                <input type="submit" name="submit" class="submit" value="Search">
+            </form>
+            {% if names %}
+                <!-- Retrieve Infromation here -->
+               {% for name in names %}
+                    <div><p>{{name[0]}} {{name[1]}} {{name[2]}}</p></div>
+                    <form method="post" action="{{ url_for('friend_list') }}">
+                        <input type="hidden" name="friend_email" value={{name[2]}}>
+                        <input type="submit" name="submit" value="Add Friend">
+                    </form>
+               {% endfor %}
+            {% endif %}
+         </div>
+    </body>
+<a href='/'>Home</a>
